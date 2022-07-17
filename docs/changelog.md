@@ -25,4 +25,5 @@ Todos los cambios representativos del proyecto serán documentados en este archi
 ### Agregado
 
 - Archivo readme  [README.md](../README.md)
-- changelog.md
+- Log de cambios [changelog.md](changelog.md)
+- Ideas de proyecto [ideas.md](ideas.md)
