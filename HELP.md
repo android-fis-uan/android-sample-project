@@ -2,11 +2,9 @@
 
 Este proyecto es usado como ejemplo en el curso de "Computación móvil" en uan.edu.co. Uselo como una guía para documentar y completar su propio proyecto.
 
-[TOC]
-
 ## Documentación del proyecto
 
-Encontrará toda la documentación del proyecto en la carpeta [docs](docs/readme.md).
+Encontrará toda la documentación del proyecto en la carpeta [docs](docs).
 
 ## Como usar este proyecto
 

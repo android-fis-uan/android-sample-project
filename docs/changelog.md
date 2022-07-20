@@ -20,7 +20,7 @@ Todos los cambios representativos del proyecto serán documentados en este archi
 
 - ... -->
 
-## [0.0.1] - 2000-06-01
+## [0.0.1](../tree/0.0.1) - 2000-06-01
 
 ### Agregado
 
