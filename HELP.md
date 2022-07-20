@@ -17,8 +17,8 @@ Para completar la documentación del proyecto siga las guías proporcionadas en 
 - [ ] Semana 1-16: Actualice el changelog con el progreso de la semana.
 - [ ] Semana 1: Complete el documento de ideas de proyecto(v0.0.1)
 - [ ] Semana 2: Complete el documento con el borrador de la interfaz de usuario (UI) de su proyecto (v0.0.2)
-- [ ] Semana 3: Complete el documeto describiendo las funcionalidades de la aplicación (v0.0.3)
+- [ ] Semana 3: Complete el documento describiendo las funcionalidades de la aplicación (v0.0.3)
 - [ ] Semana 4: Entrega de la primera version (v0.1.0)
-- [ ] Semana 8: Entrega de la segunda version (v0.1.0) incluyendo el UI de la app
-- [ ] Semana 12: Entrega de la tercera version (v0.1.0) incluyendo las principales funcionalidades de la app
-- [ ] Semana 16: Entrega de la version final (v0.1.0) con correcciones y funcionalidades adicionales de la app
+- [ ] Semana 8: Entrega de la segunda version (v0.2.0) incluyendo el UI de la app
+- [ ] Semana 12: Entrega de la tercera version (v0.3.0) incluyendo las principales funcionalidades de la app
+- [ ] Semana 16: Entrega de la version final (v1.0.0) con correcciones y funcionalidades adicionales de la app
