@@ -20,6 +20,17 @@ Todos los cambios representativos del proyecto serán documentados en este archi
 
 - ... -->
 
+## [0.0.3](../tree/0.0.3) - 2000-06-15
+
+### Agregado
+
+- Lista de funcionalidades de la aplicación
+
+### Corregido
+
+- Errores de ortografía
+
+
 ## [0.0.2](../tree/0.0.2) - 2000-06-08
 
 ### Agregado
