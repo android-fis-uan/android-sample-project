@@ -20,6 +20,17 @@ Todos los cambios representativos del proyecto serán documentados en este archi
 
 - ... -->
 
+## [0.0.2](../tree/0.0.2) - 2000-06-08
+
+### Agregado
+
+- Mockups de diseño de UI
+
+### Corregido
+
+- Errores de ortografía y algunos links
+
+
 ## [0.0.1](../tree/0.0.1) - 2000-06-01
 
 ### Agregado
