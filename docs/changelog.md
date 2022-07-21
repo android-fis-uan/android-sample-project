@@ -22,7 +22,17 @@ uso de [versionamiento semántico](https://semver.org/spec/v2.0.0.html).
 
 - ... -->
 
-## [0.0.3](../tree/0.0.3) - 2000-06-15
+## [0.1.0](../tree/v0.1.0) - 2000-06-22
+
+### Agregado
+
+- Proyecto inicial creado con Android Studio
+
+### Cambiado
+
+- Formato en archivos de markup
+
+## [0.0.3](../tree/v0.0.3) - 2000-06-15
 
 ### Agregado
 
@@ -32,7 +42,7 @@ uso de [versionamiento semántico](https://semver.org/spec/v2.0.0.html).
 
 - Errores de ortografía
 
-## [0.0.2](../tree/0.0.2) - 2000-06-08
+## [0.0.2](../tree/v0.0.2) - 2000-06-08
 
 ### Agregado
 
@@ -42,7 +52,7 @@ uso de [versionamiento semántico](https://semver.org/spec/v2.0.0.html).
 
 - Errores de ortografía y algunos links
 
-## [0.0.1](../tree/0.0.1) - 2000-06-01
+## [0.0.1](../tree/v0.0.1) - 2000-06-01
 
 ### Agregado
 
