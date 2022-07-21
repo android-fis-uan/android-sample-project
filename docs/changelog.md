@@ -1,8 +1,10 @@
 # Log de cambios del proyecto
 
-Todos los cambios representativos del proyecto serán documentados en este archivo. Este formato esta basado en ["Keep a Changelog"](https://keepachangelog.com/en/1.0.0/), y este proyecto se adhiere al uso de [versionamiento semántico](https://semver.org/spec/v2.0.0.html).
+Todos los cambios representativos del proyecto serán documentados en este archivo. Este formato esta
+basado en ["Keep a Changelog"](https://keepachangelog.com/en/1.0.0/), y este proyecto se adhiere al
+uso de [versionamiento semántico](https://semver.org/spec/v2.0.0.html).
 
-<!-- ## [version] - yyyy-mm-dd
+<!-- ## [version](../tree/version) - yyyy-mm-dd
 
 ### Agregado
 
@@ -30,7 +32,6 @@ Todos los cambios representativos del proyecto serán documentados en este archi
 
 - Errores de ortografía
 
-
 ## [0.0.2](../tree/0.0.2) - 2000-06-08
 
 ### Agregado
@@ -40,7 +41,6 @@ Todos los cambios representativos del proyecto serán documentados en este archi
 ### Corregido
 
 - Errores de ortografía y algunos links
-
 
 ## [0.0.1](../tree/0.0.1) - 2000-06-01
 
