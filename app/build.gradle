@@ -30,6 +30,10 @@ android {
         jvmTarget = '1.8'
     }
 
+    buildFeatures{
+        // https://developer.android.com/topic/libraries/view-binding
+        viewBinding true
+    }
 }
 
 dependencies {
