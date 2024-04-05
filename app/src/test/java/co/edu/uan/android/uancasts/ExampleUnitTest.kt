@@ -1,4 +1,4 @@
-package co.edu.uan.android.sample.uancasts
+package co.edu.uan.android.uancasts
 
 import org.junit.Test
 
