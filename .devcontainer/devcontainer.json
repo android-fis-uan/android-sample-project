@@ -1,0 +1,14 @@
+{
+    "name": "Android SDK",
+    "dockerFile": "Dockerfile",
+    "runArgs": ["--privileged"],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mathiasfrohlich.Kotlin",
+                "vscjava.vscode-gradle",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+}
