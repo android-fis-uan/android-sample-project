@@ -33,15 +33,6 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     
-    - name: 'Use gcloud CLI'
-      run: 'gcloud info'
-
-    - name: 'Use gcloud CLI'
-      run: 'gcloud config get project'
-    - name: 'Use gcloud CLI'
-      run: 'gcloud auth list'
-
-
-    - name: 'Use gcloud CLI'
+    - name: 'Running tests in Firebase Test Lab'
       # run: 'gcloud info'
       run: 'gcloud firebase test android run --app app/build/outputs/apk/debug/app-debug.apk --type robo --device model=MediumPhone.arm,version=30,locale=en,orientation=portrait'

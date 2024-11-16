@@ -6,17 +6,17 @@ Este repositorio contiene el código fuente y la [documentación](docs) del proy
 
 ## Uso del proyecto
 
-Este proyecto fue probado usando el SDK de Android version 34 (2024.2.11).
+Este proyecto fue probado usando el SDK de Android version 35 (2024.2.11).
 
 ### Con Android Studio
 
-Abra el proyecto en [Android Studio](https://developer.android.com/studio). La version actual fue probada con Android LadyBug (2024.2.1.11). Para generar el proyecto vaya a `Build` > `Generate APK`.
+Abra el proyecto en [Android Studio](https://developer.android.com/studio). La version actual fue probada con Android LadyBug (2024.2.1.11). Para generar el proyecto vaya a `Build` > `Build APKs`.
 
 ### Desde la linea de comandos
 
-> Nota: Puede usar devcontainers. El proyecto ya tiene una imagen preconfigurada con el SDK de Android y el CLI de GCloud.
+> Nota: Puede usar `devcontainers`. El proyecto ya tiene una imagen pre-configurada con el SDK de Android y el CLI de GCloud.
 
-Para compilar este proyecto desde la linea de comandos ejecute la tarea de generacion de un APK en [Gradle](https://developer.android.com/build/building-cmdline):
+Para compilar este proyecto desde la linea de comandos ejecute la tarea de generación de un APK en [Gradle](https://developer.android.com/build/building-cmdline):
 
 ```bash
 ./gradlew assembleDebug
@@ -24,13 +24,13 @@ Para compilar este proyecto desde la linea de comandos ejecute la tarea de gener
 
 ## Pruebas
 
-Puede ejecutar la aplicacion instalando el APK generado en su dispositivo fisico o en un emulador. Tambien es posible ejecutar la aplicacion en el [Test Lab de Firebase usando el cliente de GCloud](https://firebase.google.com/docs/test-lab/android/command-line?authuser=0&hl=en). Asegurese de tener instalado el CLI de GCloud.
+Puede ejecutar la aplicación instalando el APK generado en su dispositivo físico o en un emulador. También es posible ejecutar la aplicación en el [Test Lab de Firebase usando el cliente de GCloud](https://firebase.google.com/docs/test-lab/android/command-line?authuser=0&hl=en). Asegúrese de tener instalado el CLI de GCloud.
 
 Para esto siga los siguientes pasos:
 
 1. Cree un nuevo proyecto en Firebase
 
-1. Inicie su sesion en GCloud desde la linea de comandos:
+1. Inicie su sesión en GCloud desde la linea de comandos:
 
    ```bash
    gcloud init --console-only
@@ -42,22 +42,31 @@ Para esto siga los siguientes pasos:
    gcloud firebase test android models list --filter=virtual
    ```
 
-1. Corra sus pruebas con el comando ```gcloud firebase test android run``` pasando los parametros apropiados como el modelo y version de Android a usar. Asegurese de estar en la carpeta donde se genero el APK (`app/builf/outputs/apk/debug`). Por ejemplo:
+1. Corra sus pruebas con el comando ```gcloud firebase test android run``` pasando los parámetros apropiados como el modelo y version de Android a usar. Asegúrese de estar en la carpeta donde se genero el APK (`app/builf/outputs/apk/debug`). Por ejemplo:
    
-   Pruebas en un dispoitivo fisico de modelo `tokay` y con Android SDK `34` (Android 14)
+   Pruebas en un dispositivo físico de modelo `tokay` y con Android SDK `34` (Android 14)
 
    ```bash
    gcloud firebase test android run --app app-debug.apk --type robo --device model=tokay,version=34,locale=en,orientation=portrait
    ```
 
-   Pruebas en un dispoitivo fisico de modelo `redfin` y con Android SDK `30` (Android 11)
+   Pruebas en un dispositivo físico de modelo `redfin` y con Android SDK `30` (Android 11)
 
    ```bash
    gcloud firebase test android run --app app-debug.apk --type robo --device model=redfin,version=30,locale=en,orientation=portrait
    ```
 
-   Pruebas en un dispoitivo virtual de modelo `MediumPhone.arm` y con Android SDK `30` (Android 11) 
+   Pruebas en un dispositivo virtual de modelo `MediumPhone.arm` y con Android SDK `30` (Android 11) 
 
    ```bash
    gcloud firebase test android run --app app-debug.apk --type robo --device model=MediumPhone.arm,version=30,locale=en,orientation=portrait
    ```
+
+## Uso de Github Actions
+
+El proyecto esta configurado con Github Actions para compilar y probar de forma automática el proyecto con Firebase Test Lab, en cada push a la rama principal. Para que esta tarea funcione:
+
+1. Generar una nueva llave privada desde Firebase en `Project Overview -> Project Settings -> Service Accounts` 
+1. Crear un secret llamado `GCP_FIREBASE_CREDENTIALS` en su repositorio de Github en `Settings -> Secrets and Variables -> Actions`
+1. Asignar el rol de `Project -> Editor` en la página principal de IAM  https://console.cloud.google.com/iam-admin/iam
+1. Habilitar el API Cloud Tool Results para el proyecto https://console.cloud.google.com/apis/api/toolresults.googleapis.com/
