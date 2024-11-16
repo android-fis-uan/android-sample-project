@@ -9,6 +9,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      androidx:
+        applies-to: version-updates
+        patterns: 
+          - "androidx.*"
+      
   - package-ecosystem: "devcontainers"
     directory: "/"
     schedule:
