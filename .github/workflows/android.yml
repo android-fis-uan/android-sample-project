@@ -24,8 +24,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-  test:
-    steps:
     - id: 'auth'
       uses: 'google-github-actions/auth@v2'
       with:
