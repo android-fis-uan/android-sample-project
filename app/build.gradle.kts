@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "co.edu.uan.android.uancasts"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "co.edu.uan.android.uancasts"
