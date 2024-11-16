@@ -1,3 +1,5 @@
+[![Android CI](https://github.com/android-fis-uan/android-sample-project/actions/workflows/android.yml/badge.svg)](https://github.com/android-fis-uan/android-sample-project/actions/workflows/android.yml)
+
 # Proyecto de ejemplo de Computación Móvil
 
 Este repositorio contiene el código fuente y la [documentación](docs) del proyecto.
