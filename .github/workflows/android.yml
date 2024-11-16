@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - id: 'Aauth GCP'
+    - id: 'auth GCP'
       uses: 'google-github-actions/auth@v2'
       with:
         credentials_json: '${{ secrets.GCP_FIREBASE_CREDENTIALS }}'
