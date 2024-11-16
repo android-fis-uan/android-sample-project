@@ -5,7 +5,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: ["gradle","devcontainers"]
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "devcontainers"
+    directory: "/"
     schedule:
       interval: "weekly"
