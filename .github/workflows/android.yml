@@ -37,7 +37,7 @@ jobs:
       with:
         name: apk-debug.apk
     - id: 'auth'
-      if: ${{ hashFiles('apk-debug.apk') != '' }}
+      if: ${{ hashFiles('app/build/outputs/apk/debug/app-debug.apk') != '' }}
       uses: 'google-github-actions/auth@v2'
       with:
         credentials_json: '${{ secrets.GCP_FIREBASE_CREDENTIALS }}'
