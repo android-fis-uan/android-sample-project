@@ -44,9 +44,9 @@ jobs:
       with:
         credentials_json: '${{ secrets.GCP_FIREBASE_CREDENTIALS }}'
     - name: 'Set up Cloud SDK'
-      if: ${{ hashFiles('apk-debug.apk') != '' }}
+      if: ${{ hashFiles('app-debug.apk') != '' }}
       uses: 'google-github-actions/setup-gcloud@v2'
     - name: 'Running tests in Firebase Test Lab'
-      if: ${{ hashFiles('apk-debug.apk') != '' }}
+      if: ${{ hashFiles('app-debug.apk') != '' }}
       # run: 'gcloud info'
       run: 'gcloud firebase test android run --app app-debug.apk --type robo --device model=MediumPhone.arm,version=30,locale=en,orientation=portrait'
