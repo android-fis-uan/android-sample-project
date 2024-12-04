@@ -36,6 +36,8 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: apk-debug.apk
+    - name: Display structure of downloaded files
+      run: ls -R
     - id: 'auth'
       if: ${{ hashFiles('app/build/outputs/apk/debug/app-debug.apk') != '' }}
       uses: 'google-github-actions/auth@v2'
