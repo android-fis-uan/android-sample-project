@@ -1,51 +1,40 @@
-# Ideas de proyecto
+Ideas de proyecto
 
-Se proponen las siguientes ideas de aplicación para el proyecto:
+Se propone la siguiente aplicación:
 
-## Idea 1: UANCasts (seleccionada)
+APPMERGENCY BTÁ
 
-UANCasts es una aplicación que permite consultar y escuchar Podcasts de distintas fuentes a través
-de una interfaz de usuario amigable. La aplicación traerá la información de Listen Notes, que es una
-fuente pública de datos de Podcasts en Internet.
+El personal que trabaja en la línea de emergencias de Bogotá debe ingresar la información de los casos que atiende a diario y para ello recibe varias sesiones de formación o capacitación con el fin de que aprenda identificar de manera clara QUÉ está pasando y DÓNDE está pasando, dos aspectos clave que debe registrar en el sistema para la gestión de emergencias denominado Premier One y desde el cual las entidades que despachan recursos obtienen la información mínima necesaria para saber qué unidad deben enviar y a dónde debe llegar el recurso, ejemplo, patrulla, camión de bomberos o ambulancia:
+Por ejemplo, un caso de riña con herido se tipifica, o codifica, como 935, y al poner que hay heridos se activa otro código que es 608 y el primer código activa en el sistema a la Policía de Bogotá y el segundo al Centro Regulador de Urgencias y Emergencias en Salud, CRUE, aparte puede que la persona haya sido herida con arma de fuego en ese caso a la policía le llega un 935, con 911 y así ya saben qué tipo de escenario pueden encontrar las unidades.
+Por otro lado ubicar correctamente si la dirección empieza por calle, carrera, diagonal, transversal o avenida y si es par o impar o si se ubica en una u otra localidad o si la persona está en una terraza, sótano, baño o balcón, etc. Es fundamental para saber a dónde se debe remitir la ayuda y desde qué cuadrante o sector se debe enviar, por ejemplo si el herido estuviera en una zona de difícil acceso se debería activar a Bomberos por un 709 o rescate.
+Entonces como se ve son cientos de códigos que debe aprender un operador de la línea de emergencia con el fin de tipificar y enviar de manera rápida y acertada la información a las agencias de despacho, sin contar con que cada agencia tiene sus propios códigos y lo que para un policía es una persona que sufrió lesiones personales o 910 para el CRUE es un 608 o herido por lo cual dependiendo de la agencia su código cambia, Policía; Bomberos, CRUE, IDIGER, Secretaría de la Mujer, entre otras.
 
-### Aplicaciones similares
+La idea es que haya una APP mnemotécnica que les ayude a los operadores de las diferentes agencias o entidades a aprender los códigos y a asociar la situación con cada uno de ellos, así como a conocer las diferentes variables que se pueden presentar en un incidente para enviarlo con la prioridad debida y al lugar indicado con la información mínima necesaria.
 
-- [Apple Podcasts](https://apps.apple.com/es/app/apple-podcasts/id525463029)
-- [Pocket Casts](https://play.google.com/store/apps/details?id=au.com.shiftyjelly.pocketcasts&hl=es_CO&gl=US)
-- [Podcasts Addict](https://play.google.com/store/apps/details?id=com.bambuna.podcastaddict&hl=es_CO&gl=US)
-- [Stitcher](https://play.google.com/store/apps/details?id=com.stitcher.app&hl=es_CO&gl=US)
 
-## Idea 2: Lorem ipsum dolor sit amet
+Aplicaciones similares
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit laoreet platea integer, cras vestibulum
-sociis nunc nisl hac tempor sem porttitor magnis inceptos, nibh placerat varius blandit sed egestas
-montes fames diam. Dis non eu fames netus potenti sapien malesuada, eleifend himenaeos morbi ut
-mauris ad, senectus consequat tellus leo donec suspendisse. Ornare convallis facilisis nisi feugiat
-mus vel eros enim senectus, augue nibh nullam elementum conubia imperdiet magnis rutrum, eleifend
-cubilia torquent felis ultricies ut urna tortor. Convallis etiam taciti aenean fringilla orci
-eleifend ad donec, accumsan neque pharetra non venenatis platea risus, sociis ultricies nisi
-vulputate suspendisse a nec.
+1.	Aplicación DeTránsito Aplicación DeTránsito es una herramienta educativa diseñada para brindar acceso a información pública en Colombia sobre tránsito, transporte, seguridad vial y la investigación y reconstrucción de accidentes de tránsito. CONTENIDO:
+Temas y recursos relacionados al tránsito, el transporte y la seguridad vial Código nacional de tránsito, Ley 769 de 2002
 
-### Aplicaciones similares
 
-- [App 1](#)
-- [App 2](#)
-- [App 3](#)
 
-## Idea 3: At vero eos et accusamus et iusto
+2)Japanese Kanji Study Estudia con tarjetas, tests personalizables y pruebas de caligrafía. Cada kanji tiene información detallada y muchos ejemplos. La aplicación proporciona una manera práctica de aprender a leer y a escribirn kanji, el método más avanzado de escritura japonesa con miles de representaciones de ideogramas.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
-modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
-commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+FUNCIONALIDADES:
 
-### Aplicaciones similares
+1)	Iniciar sesión
+2)	Cambiar contraseña
+3)	Ingresar a las diferentes actividades de la aplicación tales como: 
+    a)	Registrarse como nuevo usuario
+    b)	Ingresar con usuario y contraseña
+    c)	Ingresar a los diferentes modulos de capacitación tales como: 
+        a.	Guía de tipificación de incidentes, códigos alfanuméricos
+        b.	Geolocalización
+        c.	Servicio al ciudadno
+        d.	Sistema de control de llamadas de emergencia VESTA
+        e.	Sistema de registro de bitácora de llamada PremierOne
+    d)	Consultar módulos aprobados
+    e)	Navegar por los contenidos de cada módulo e ir avanzando y viendo mensajes de acierto y error en la práctica de los códigos y demás contenidos de la App
+    f)	Cerrar sesión
 
-- [App 1](#)
-- [App 2](#)
-- [App 3](#)
