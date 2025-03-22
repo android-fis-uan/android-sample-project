@@ -3,6 +3,8 @@ package co.edu.uan.android.uancasts
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Home
@@ -15,25 +17,30 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import co.edu.uan.android.uancasts.ui.HomeScreen
 import co.edu.uan.android.uancasts.ui.PodcastScreen
 import co.edu.uan.android.uancasts.ui.SearchScreen
+import co.edu.uan.android.uancasts.ui.PodcastViewModel
 import co.edu.uan.android.uancasts.ui.theme.UANCastsTheme
 
 enum class UanCastsScreen(@StringRes val title: Int) {
-    Home(title = R.string.app_name),
-    Podcast(title = R.string.episodes),
-    Search(title = R.string.search)
+    Home(title = R.string.title_home),
+    Podcast(title = R.string.title_dashboard),
+    Search(title = R.string.title_search)
 }
 
 data class NavigationItem(
@@ -43,24 +50,27 @@ data class NavigationItem(
 )
 
 @Composable
-fun BottomNavigationBar(navController: NavHostController) {
+fun BottomNavigationBar(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+) {
     val selectedNavigationIndex = rememberSaveable {
         mutableIntStateOf(0)
     }
 
     val navItems = listOf(
         NavigationItem(
-            title = "Home",
+            title = stringResource(UanCastsScreen.Home.title),
             icon = Icons.Filled.Home,
             route = UanCastsScreen.Home.name
         ),
-//        NavigationItem(
-//            title = "Podcasts",
-//            icon = Icons.AutoMirrored.Filled.List,
-//            route = UanCastsScreen.Podcast.name
-//        ),
         NavigationItem(
-            title = "Search",
+            title = stringResource(UanCastsScreen.Podcast.title),
+            icon = Icons.AutoMirrored.Filled.List,
+            route = UanCastsScreen.Podcast.name
+        ),
+        NavigationItem(
+            title = stringResource(UanCastsScreen.Search.title),
             icon = Icons.Filled.Search,
             route = UanCastsScreen.Search.name
         )
@@ -99,13 +109,30 @@ fun BottomNavigationBar(navController: NavHostController) {
 
 @Composable
 fun UANCastsApp(
-    navController: NavHostController = rememberNavController()) {
-    Scaffold(modifier = Modifier.fillMaxSize(),
-        bottomBar = { BottomNavigationBar(navController)}) { innerPadding ->
+    viewmodel: PodcastViewModel = viewModel(),
+    navController: NavHostController = rememberNavController()
+) {
+
+    // Get current back stack entry
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    // Get the name of the current screen
+    val currentScreen = UanCastsScreen.valueOf(
+        backStackEntry?.destination?.route ?: UanCastsScreen.Home.name
+    )
+
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        bottomBar = {
+            BottomNavigationBar(navController)
+        }
+    ) { innerPadding ->
         NavHost(
             navController = navController,
             startDestination = UanCastsScreen.Home.name,
-            modifier = Modifier.padding(innerPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+                .padding(innerPadding)
         ) {
             composable(route = UanCastsScreen.Home.name) {
                 HomeScreen()
