@@ -1,10 +1,8 @@
 package co.edu.uan.android.uancasts.ui
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import co.edu.uan.android.uancasts.R
@@ -15,22 +13,21 @@ import co.edu.uan.android.uancasts.ui.theme.UANCastsTheme
 fun HomeScreen(
     modifier: Modifier = Modifier
 ) {
-    Box (modifier = Modifier
-        .fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ){
-        Column {
-            ContentContainer(
-                title = "Recommendations",
-                image = R.drawable.podcast_5,
-                contentName = "The Vintage RPG Podcast",
-                contentDescription = "10 episodes",
-                controlsEnabled = false
-            )
-            ContentItemList(
-                sampleData
-            )
-        }
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+    ) {
+        ContentContainer(
+            title = "Recommendations",
+            image = R.drawable.podcast_5,
+            contentName = "The Vintage RPG Podcast",
+            contentDescription = "10 episodes",
+            controlsEnabled = false
+        )
+        ContentItemList(
+            sampleData,
+            modifier = Modifier.weight(1f) // using weight to fix issue when using LazyColumn inside a Column
+        )
     }
 }
 

@@ -1,10 +1,8 @@
 package co.edu.uan.android.uancasts.ui
 
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.PlayCircle
@@ -28,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -159,8 +158,7 @@ fun ContentItem(
             .padding(8.dp)
     )  {
         Text(podcast.title,
-            fontWeight = FontWeight.Bold,
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.titleSmall,
             )
         Text(podcast.description,
             style = MaterialTheme.typography.bodySmall,
@@ -174,13 +172,14 @@ fun ContentItem(
 }
 
 @Composable
-fun ContentItemContainer(
+fun ContentItemCard(
     podcast: Podcast,
     modifier: Modifier = Modifier
 ) {
-    Surface(modifier = modifier
+    Surface(
+        color = MaterialTheme.colorScheme.background,
+        modifier = modifier
         .fillMaxWidth()
-        .border(BorderStroke(1.dp, Color(0xFFE9E6E6)))
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -191,6 +190,7 @@ fun ContentItemContainer(
             Image(
                 painterResource(podcast.image),
                 contentDescription = null,
+                contentScale = ContentScale.Fit,
                 modifier = Modifier.size(93.dp).padding(8.dp),
             )
             ContentItem(podcast, modifier = Modifier.weight(1f))
@@ -209,14 +209,12 @@ fun ContentItemList(
     podcasts: List<Podcast>,
     modifier: Modifier = Modifier
 ) {
-    Surface(
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(1.dp),
         modifier = modifier
             .fillMaxWidth()
     ) {
-        Column(
-            modifier = modifier
-                .fillMaxWidth()
-        ) {
+        item {
             Text(
                 "Most popular",
                 style = MaterialTheme.typography.labelMedium,
@@ -224,11 +222,9 @@ fun ContentItemList(
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(start = 8.dp, top = 8.dp)
             )
-            LazyColumn() {
-                items(podcasts) { podcast ->
-                    ContentItemContainer(podcast = podcast)
-                }
-            }
+        }
+        itemsIndexed(podcasts) { index, podcast ->
+            ContentItemCard(podcast = podcast)
         }
     }
 }
@@ -266,7 +262,7 @@ fun ActiveEpisodeContainerPreview() {
 @Composable
 fun PodcastItemPreview() {
     UANCastsTheme {
-        ContentItemContainer(
+        ContentItemCard(
             sampleData[1]
         )
     }

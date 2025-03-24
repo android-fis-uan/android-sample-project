@@ -33,8 +33,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import co.edu.uan.android.uancasts.ui.HomeScreen
 import co.edu.uan.android.uancasts.ui.PodcastScreen
-import co.edu.uan.android.uancasts.ui.SearchScreen
 import co.edu.uan.android.uancasts.ui.PodcastViewModel
+import co.edu.uan.android.uancasts.ui.SearchScreen
 import co.edu.uan.android.uancasts.ui.theme.UANCastsTheme
 
 enum class UanCastsScreen(@StringRes val title: Int) {
