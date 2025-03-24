@@ -1,10 +1,10 @@
-package co.edu.uan.android.uancasts.ui.home
+package co.edu.uan.android.uancasts.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class PodcastViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"
