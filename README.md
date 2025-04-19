@@ -10,7 +10,7 @@ Este proyecto fue probado usando el SDK de Android version 35 (2024.2.11).
 
 ### Con Android Studio
 
-Abra el proyecto en [Android Studio](https://developer.android.com/studio). La version actual fue probada con Android LadyBug (2024.2.1.11). Para generar el proyecto vaya a `Build` > `Build APKs`.
+Abra el proyecto en [Android Studio](https://developer.android.com/studio). La version actual fue probada con Android Studio Meerkat | 2024.3.1. Para generar el proyecto vaya a `Build` > `Build APKs`.
 
 ### Desde la linea de comandos
 
@@ -64,9 +64,4 @@ Para esto siga los siguientes pasos:
 
 ## Uso de Github Actions
 
-El proyecto esta configurado con Github Actions para compilar y probar de forma automática el proyecto con Firebase Test Lab, en cada push a la rama principal. Para que esta tarea funcione:
-
-1. Generar una nueva llave privada desde Firebase en `Project Overview -> Project Settings -> Service Accounts` 
-1. Crear un secret llamado `GCP_FIREBASE_CREDENTIALS` en su repositorio de Github en `Settings -> Secrets and Variables -> Actions`
-1. Asignar el rol de `Project -> Editor` en la página principal de IAM  https://console.cloud.google.com/iam-admin/iam
-1. Habilitar el API Cloud Tool Results para el proyecto https://console.cloud.google.com/apis/api/toolresults.googleapis.com/
+El proyecto esta configurado con Github Actions para compilar y probar de forma automática el proyecto con Firebase Test Lab, en cada push a la rama principal.
