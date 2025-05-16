@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import co.edu.uan.android.uancasts.ui.theme.UANCastsTheme
 
-class MainActivity : ComponentActivity() {
+class UanCastsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
