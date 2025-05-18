@@ -1,7 +1,10 @@
 package co.edu.uan.android.uancasts.data
 
 import co.edu.uan.android.uancasts.R
+import co.edu.uan.android.uancasts.data.model.Episode
+import co.edu.uan.android.uancasts.data.model.Podcast
 
+// TODO: Move to test resources
 val sampleData = listOf(
     Podcast(
         title = "The Vintage RPG Podcast",

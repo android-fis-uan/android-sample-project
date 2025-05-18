@@ -1,9 +1,8 @@
-package co.edu.uan.android.uancasts
+package co.edu.uan.android.uancasts.data.network
 
-import co.edu.uan.android.uancasts.data.ApiPodcastsRepository
-import co.edu.uan.android.uancasts.data.PodcastsRepository
-import co.edu.uan.android.uancasts.service.ListenNotesApiService
-import junit.framework.Assert.assertEquals
+import co.edu.uan.android.uancasts.data.repository.ApiPodcastsRepository
+import co.edu.uan.android.uancasts.data.repository.PodcastsRepository
+import junit.framework.Assert
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
@@ -1162,8 +1161,8 @@ class ApiPodcastsRepositoryTest {
         val response = MockResponse().setResponseCode(200).setBody(responseBody)
         mockWebserver.enqueue(response)
         val results = repository.getPodcasts()
-        assertEquals(20, results.size)
-        assertEquals("The Diary Of A CEO with Steven Bartlett", results.get(0).title)
+        Assert.assertEquals(20, results.size)
+        Assert.assertEquals("The Diary Of A CEO with Steven Bartlett", results.get(0).title)
 
 
     }

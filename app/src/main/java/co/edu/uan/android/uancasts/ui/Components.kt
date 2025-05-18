@@ -33,7 +33,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.edu.uan.android.uancasts.R
-import co.edu.uan.android.uancasts.data.Podcast
+import co.edu.uan.android.uancasts.data.model.Podcast
 import co.edu.uan.android.uancasts.data.sampleData
 import co.edu.uan.android.uancasts.ui.theme.DarkGrayPanel
 import co.edu.uan.android.uancasts.ui.theme.LightGrayPanel
@@ -165,7 +165,7 @@ fun ContentItem(
             maxLines = 2,
             overflow = TextOverflow.Ellipsis
             )
-        Text("${podcast.episodes.size} episodes",
+        Text("${podcast.totalEpisodes} episodes",
             style = MaterialTheme.typography.bodySmall,
             )
     }
@@ -188,7 +188,7 @@ fun ContentItemCard(
                 .fillMaxWidth()
         ) {
             Image(
-                painterResource(podcast.image),
+                painterResource(R.drawable.podcast_5), // TODO: Replace with podcast.image
                 contentDescription = null,
                 contentScale = ContentScale.Fit,
                 modifier = Modifier.size(93.dp).padding(8.dp),
