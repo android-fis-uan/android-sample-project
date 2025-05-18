@@ -263,7 +263,7 @@ fun ActiveEpisodeContainerPreview() {
 fun PodcastItemPreview() {
     UANCastsTheme {
         ContentItemCard(
-            sampleData[1]
+            sampleData.podcasts[1]
         )
     }
 }
@@ -273,7 +273,7 @@ fun PodcastItemPreview() {
 fun PodcastListPreview() {
     UANCastsTheme {
         ContentItemList(
-            sampleData
+            sampleData.podcasts
         )
     }
 }

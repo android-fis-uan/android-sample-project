@@ -22,7 +22,7 @@ class RealPodcastsRepository: PodcastsRepository {
         }
         catch (e: Exception) {
             throw RuntimeException(e)
-            return FakeDataSource.podcastsList
+            return FakeDataSource.podcastsList.podcasts
         }
     }
 }
