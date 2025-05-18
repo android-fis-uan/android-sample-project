@@ -1,14 +1,10 @@
 package co.edu.uan.android.uancasts.ui.podcasts
 
-import co.edu.uan.android.uancasts.data.network.ListenNotesApiService
 import co.edu.uan.android.uancasts.fake.FakeDataSource
 import co.edu.uan.android.uancasts.fake.FakePodcastsRepository
-import co.edu.uan.android.uancasts.real.RealPodcastsRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -29,7 +25,7 @@ class PodcastViewModelTest {
             viewModel.getPodcasts()
             // Then podcastsUiState should be PodcastsUiState.Success with the returned podcasts.
             advanceUntilIdle()
-            assertEquals(PodcastsUiState.Success(FakeDataSource.podcastsList), viewModel.podcastsUiState)
+            assertEquals(PodcastsUiState(podcasts = FakeDataSource.podcastsList), viewModel.podcastsUiState)
         }
     }
 

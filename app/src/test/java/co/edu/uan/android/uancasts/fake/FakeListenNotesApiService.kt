@@ -1,6 +1,5 @@
 package co.edu.uan.android.uancasts.fake
 
-import co.edu.uan.android.uancasts.data.model.Podcast
 import co.edu.uan.android.uancasts.data.model.PodcastResponse
 import co.edu.uan.android.uancasts.data.network.ListenNotesApiService
 
