@@ -25,16 +25,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import co.edu.uan.android.uancasts.ui.HomeScreen
-import co.edu.uan.android.uancasts.ui.PodcastScreen
-import co.edu.uan.android.uancasts.ui.PodcastViewModel
 import co.edu.uan.android.uancasts.ui.SearchScreen
+import co.edu.uan.android.uancasts.ui.podcasts.PodcastScreen
 import co.edu.uan.android.uancasts.ui.theme.UANCastsTheme
 
 enum class UanCastsScreen(@StringRes val title: Int) {
@@ -109,7 +107,6 @@ fun BottomNavigationBar(
 
 @Composable
 fun UANCastsApp(
-    viewmodel: PodcastViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ) {
 
