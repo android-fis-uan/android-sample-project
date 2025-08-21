@@ -6,7 +6,7 @@ Este repositorio contiene el código fuente y la [documentación](docs) del proy
 
 ## Uso del proyecto
 
-Este proyecto fue probado usando el SDK de Android version 35 (2024.2.11).
+Este proyecto fue probado usando el SDK de Android version 36.
 
 ### Con Android Studio
 
