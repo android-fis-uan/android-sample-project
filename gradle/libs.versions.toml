@@ -23,7 +23,7 @@ mockwebserver = "5.1.0"
 kotlinxCoroutinesTest = "1.10.2"
 androidxHiltNavigationCompose = "1.2.0"
 hilt = "2.57.1"
-ksp = "2.2.10-2.0.2"
+ksp = "2.2.20-2.0.3"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
