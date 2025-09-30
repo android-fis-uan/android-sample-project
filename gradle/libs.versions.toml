@@ -22,7 +22,7 @@ retrofit2KotlinxSerializationConverter = "1.0.0"
 mockwebserver = "5.1.0"
 kotlinxCoroutinesTest = "1.10.2"
 androidxHiltNavigationCompose = "1.3.0"
-hilt = "2.57.1"
+hilt = "2.57.2"
 ksp = "2.2.20-2.0.3"
 
 [libraries]
