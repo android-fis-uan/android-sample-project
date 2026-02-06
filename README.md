@@ -10,7 +10,7 @@ Este proyecto fue probado usando el SDK de Android version 36.
 
 ### Con Android Studio
 
-Abra el proyecto en [Android Studio](https://developer.android.com/studio). La version actual fue probada con Android Studio Meerkat | 2024.3.1. Para generar el proyecto vaya a `Build` > `Build APKs`.
+Abra el proyecto en [Android Studio](https://developer.android.com/studio). La versión actual fue probada con Android Studio Otter 3 Feature Drop | 2025.2.3.9. Para generar el proyecto vaya a `Build` > `Build APKs`.
 
 ### Desde la linea de comandos
 
