@@ -20,6 +20,9 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v6
       with:
+        build-scan-publish: true 
+        build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
+        build-scan-terms-of-use-agree: "yes"
         # This preserves the Gradle configuration cache and build cache artifacts
         cache-read-only: ${{ github.ref != 'refs/heads/main' }} # Optional: Only write cache on main branch
     - name: Grant execute permission for gradlew
@@ -27,7 +30,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       if: ${{ hashFiles('build.gradle*') != '' }}
-      run: ./gradlew build --no-daemon --scan
+      run: ./gradlew assebleDebug --no-daemon --scan
       env:
         # This automatically accepts the Gradle Build Scan Terms of Service
         GRADLE_ENTERPRISE_AGREE_PUBLIC_TOS: "yes"
