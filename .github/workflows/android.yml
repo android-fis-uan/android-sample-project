@@ -43,20 +43,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download APK
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         name: apk-debug.apk
-    - name: Display structure of downloaded files
-      run: ls -R
+    - name: Check for Firebase Credentials
+      id: secret-check
+      run: |
+        if [ -z "\${{ secrets.GCP_FIREBASE_CREDENTIALS }}" ]; then
+          echo "⚠️ GCP_FIREBASE_CREDENTIALS secret is not available (likely a fork)."
+          echo "⏩ Breaking job early to avoid failures."
+          echo "should_skip=true" >> \$GITHUB_OUTPUT
+        else
+          echo "🚀 GCP_FIREBASE_CREDENTIALS secret found."
+          echo "should_skip=false" >> \$GITHUB_OUTPUT
+        fi
     - id: 'auth'
-      if: ${{ hashFiles('app-debug.apk') != '' }}
-      uses: 'google-github-actions/auth@v2'
+      if: steps.secret-check.outputs.should_skip != 'true'
+      uses: 'google-github-actions/auth@v3'
       with:
         credentials_json: '${{ secrets.GCP_FIREBASE_CREDENTIALS }}'
     - name: 'Set up Cloud SDK'
-      if: ${{ hashFiles('app-debug.apk') != '' }}
-      uses: 'google-github-actions/setup-gcloud@v2'
+      if: steps.secret-check.outputs.should_skip != 'true'
+      uses: 'google-github-actions/setup-gcloud@v3'
     - name: 'Running tests in Firebase Test Lab'
-      if: ${{ hashFiles('app-debug.apk') != '' }}
-      # run: 'gcloud info'
-      run: 'gcloud firebase test android run --app app-debug.apk --type robo --device model=MediumPhone.arm,version=30,locale=en,orientation=portrait'
+      if: steps.secret-check.outputs.should_skip != 'true'
+      # run: 'gcloud info --async' 
+      run: 'gcloud firebase test android run --app app-debug.apk --timeout 3m --type robo --device model=MediumPhone.arm,version=30,locale=en,orientation=portrait'
