@@ -10,21 +10,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
+    - uses: actions/checkout@v6
+    - name: Set up JDK
+      uses: actions/setup-java@v5
       with:
-        java-version: '21'
+        java-version: '25'
         distribution: 'temurin'
-        cache: gradle
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v6
+      with:
+        build-scan-publish: true 
+        build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
+        build-scan-terms-of-use-agree: "yes"
+        # This preserves the Gradle configuration cache and build cache artifacts
+        # cache-read-only: ${{ github.ref != 'refs/heads/main' }} # Optional: Only write cache on main branch
     - name: Grant execute permission for gradlew
       if: ${{ hashFiles('gradlew') != '' }}
       run: chmod +x gradlew
     - name: Build with Gradle
       if: ${{ hashFiles('build.gradle*') != '' }}
-      run: ./gradlew build
+      run: ./gradlew assembleDebug --no-daemon --scan
+      env:
+        # This automatically accepts the Gradle Build Scan Terms of Service
+        GRADLE_ENTERPRISE_AGREE_PUBLIC_TOS: "yes"
     - name: Upload Testing APK
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: apk-debug.apk
         path: app/build/outputs/apk/debug/app-debug.apk
