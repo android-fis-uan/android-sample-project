@@ -30,7 +30,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       if: ${{ hashFiles('build.gradle*') != '' }}
-      run: ./gradlew assebleDebug --no-daemon --scan
+      run: ./gradlew assembleDebug --no-daemon --scan
       env:
         # This automatically accepts the Gradle Build Scan Terms of Service
         GRADLE_ENTERPRISE_AGREE_PUBLIC_TOS: "yes"
