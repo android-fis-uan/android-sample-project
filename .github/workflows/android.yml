@@ -39,6 +39,7 @@ jobs:
         name: apk-debug.apk
         path: app/build/outputs/apk/debug/app-debug.apk
   firebase-test-lab:
+    if: "${{ secrets.GCP_FIREBASE_CREDENTIALS != '' }}"
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -55,7 +56,7 @@ jobs:
         credentials_json: '${{ secrets.GCP_FIREBASE_CREDENTIALS }}'
     - name: 'Set up Cloud SDK'
       if: ${{ hashFiles('app-debug.apk') != '' }}
-      uses: 'google-github-actions/setup-gcloud@v2'
+      uses: 'google-github-actions/setup-gcloud@v3'
     - name: 'Running tests in Firebase Test Lab'
       if: ${{ hashFiles('app-debug.apk') != '' }}
       # run: 'gcloud info'
