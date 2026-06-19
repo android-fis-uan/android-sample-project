@@ -23,7 +23,7 @@ jobs:
         build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         build-scan-terms-of-use-agree: "yes"
         # This preserves the Gradle configuration cache and build cache artifacts
-        cache-read-only: ${{ github.ref != 'refs/heads/main' }} # Optional: Only write cache on main branch
+        # cache-read-only: ${{ github.ref != 'refs/heads/main' }} # Optional: Only write cache on main branch
     - name: Grant execute permission for gradlew
       if: ${{ hashFiles('gradlew') != '' }}
       run: chmod +x gradlew
